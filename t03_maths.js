@@ -26,4 +26,4 @@ console.log ("You have "+ pocketMoney +  " dollars")
 
 console.log("Hi "+ user)
 console.log ("As of "+current_year+ " you are "+age+ " years old " )
-console.log ("You were born in " )
+console.log ("You were born in "  )
