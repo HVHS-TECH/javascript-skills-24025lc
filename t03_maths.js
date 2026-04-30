@@ -14,6 +14,10 @@ var pocketMoney = 200
 var current_year = 2026
 
 
+var birth_year = 0
+birth_year = current_year - age;
+
+
 
 
 console.log("Pocket Money")
@@ -26,4 +30,4 @@ console.log ("You have "+ pocketMoney +  " dollars")
 
 console.log("Hi "+ user)
 console.log ("As of "+current_year+ " you are "+age+ " years old " )
-console.log ("You were born in "  )
+console.log ("You were born in"+ birth_year)
