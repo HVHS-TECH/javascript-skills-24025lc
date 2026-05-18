@@ -11,9 +11,9 @@ console.log("Hi my name is Liam Chung")
 /****************************
 Functions
 ****************************/
-function welcome(){
+function welcome(){"to "+ the + shop
   // Add a line to the html page
-  OUTPUT.innerHTML += "welcome to the shop";
+  OUTPUT.innerHTML += "<p>Welcome to the Shop</p>";
 }
 
 //Variables
@@ -26,4 +26,4 @@ var shop ="shop"
 /****************************
 Main Code
 ****************************/
-welcome("to "+ the + "shop")
+welcome("to "+ the + shop)
