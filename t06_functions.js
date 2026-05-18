@@ -26,4 +26,4 @@ var shop ="shop"
 /****************************
 Main Code
 ****************************/
-welcome("to "+ the shop)
+welcome("to "+ the + "shop")
