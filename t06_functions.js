@@ -1,9 +1,21 @@
-console.log("Hi "+ user)
-console.log ("As of "+current_year+ " you are "+age+ " years old " )
-console.log ("You were born in "+ birth_year )
-console.log ("In 10 years you will be "+ future_me_2) 
-console.log ("You have "+ pocketMoney + " dollars ")
-console.log ("You spend half of your money, now you have "+ half_money + " dollars")
-console.log ("Then you get $3, now you have "+ extra_money+ " dollars")
-console.log("Pocket Money")
+/****************************
+Name of task: Task 6
+Put your header comment here!
+****************************/
+console.log("Running T6-functions.js")
+console.log("Hi my name is Liam Chung")
+
+
+
+
+/****************************
+Functions
+****************************/
+function writeLine(){
+  // Add a line to the html page
+  OUTPUT.innerHTML += "<p>Less code matters</p>";
+}
+
+/*Task  ****************************/
+welcome(to the shop)
 
