@@ -11,16 +11,18 @@ console.log("Hi my name is Liam Chung")
 /****************************
 Functions
 ****************************/
-function displaywelcome(){
+function displaywelcome(_name, _price){
   // Change OUTPUT to match your HTML ID exactly
   let output = document.getElementById("spaceForJavaScriptOutput");
-  output.innerHTML += "<p>Welcome to the Shop</p>";
-}
+  output.innerHTML += "<p>Chocolate Bar "+_price+"</p>";
+  output.innerHTML += "<p>Chips "+_price+"</p>";
+  output.innerHTML += "<p>Drink "+_price+"</p>";
 
+}
 
 
 
 /****************************
 Main Code
 ****************************/
-welcome() 
+displayWelcome("Chocolate bar",4)
