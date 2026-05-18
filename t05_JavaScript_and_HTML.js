@@ -38,5 +38,6 @@ console.log ("As of "+current_year+ " you are "+age+ " years old " )
 console.log ("You have "+ pocketMoney +  " dollars")
 
 
-
+/*Task 5 ****************************/
+console.log( <div id="spaceForJavaScriptOutput"></div>)
 
