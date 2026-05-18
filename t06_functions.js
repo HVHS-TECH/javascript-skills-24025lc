@@ -23,5 +23,4 @@ function welcome(){
 /****************************
 Main Code
 ****************************/
-welcome() {OUTPUT.innerHTML += "<p>Welcome to the Shop</p>";
-}
+welcome() 
