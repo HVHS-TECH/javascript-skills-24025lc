@@ -17,18 +17,13 @@ function welcome(){
 }
 
 //Variables
-var user = "user"
-var birth_year = 2010
-var name = "Liam"
-var age = 16; 
-var pocketMoney = 200 
-var current_year = 2026
-var future_me = 10
-var half_money = 100
-var extra_money = 103
+var to = "to"
+var the ="the"
+var shop ="shop"
+
 
 
 /****************************
 Main Code
 ****************************/
-welcome(to "+ the shop)
+welcome("to "+ the shop)
