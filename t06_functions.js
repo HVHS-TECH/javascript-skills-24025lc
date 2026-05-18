@@ -1,6 +1,6 @@
 /****************************
 Name of task: Task 6
-Put your header comment here!
+Functions
 ****************************/
 console.log("Running T6-functions.js")
 console.log("Hi my name is Liam Chung")
