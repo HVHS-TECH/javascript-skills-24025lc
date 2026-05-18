@@ -12,11 +12,10 @@ console.log("Hi my name is Liam Chung")
 Functions
 ****************************/
 function welcome(){
-  // Add a line to the html page
-  OUTPUT.innerHTML += "<p>Welcome to the Shop</p>";
+  // Explicitly find the element in the HTML DOM
+  let outputElement = document.getElementById("OUTPUT");
+  outputElement.innerHTML += "<p>Welcome to the Shop</p>";
 }
-
-
 
 
 
