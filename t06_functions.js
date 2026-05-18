@@ -12,10 +12,11 @@ console.log("Hi my name is Liam Chung")
 Functions
 ****************************/
 function welcome(){
-  // Explicitly find the element in the HTML DOM
-  let outputElement = document.getElementById("OUTPUT");
-  outputElement.innerHTML += "<p>Welcome to the Shop</p>";
+  // Change OUTPUT to match your HTML ID exactly
+  let output = document.getElementById("spaceForJavaScriptOutput");
+  output.innerHTML += "<p>Welcome to the Shop</p>";
 }
+
 
 
 
