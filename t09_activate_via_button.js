@@ -20,7 +20,12 @@ function displaywelcome(_name, _price){
 
 }
 
-
+function start() {
+  spaceForJavaScriptOutput.innerHTML
+  spaceForJavaScriptOutput.innerHTML
+  answer = currentYear - userAge;
+  spaceForJavaScriptOutput
+}
 
 /****************************
 Main Code
