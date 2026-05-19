@@ -12,7 +12,7 @@ console.log("Hi my name is Liam Chung")
 Functions
 ****************************/
 function displaywelcome(_name, _price){
-  // Change OUTPUT to match your HTML ID exactly
+  // Change OUTPUT to match  HTML ID exactly
   let output = document.getElementById("spaceForJavaScriptOutput");
   output.innerHTML += "<p>Chocolate Bar "+_price+"</p>";
   output.innerHTML += "<p>Chips "+_price+"</p>";
