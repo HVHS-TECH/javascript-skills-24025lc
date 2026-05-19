@@ -48,3 +48,6 @@ function start() {
   // 3. Clear old text and display the new answer
   output.innerHTML = "<p>Your birth year is: " + answer + "</p>";
 }
+
+
+/*Task 10 ****************************/
