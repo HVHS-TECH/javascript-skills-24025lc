@@ -36,4 +36,15 @@ displayWelcome("Chocolate bar",4)
 
 /*Task 9 ****************************/
 
-
+function start() {
+  // 1. Get the HTML element
+  let output = document.getElementById("spaceForJavaScriptOutput");
+  
+  // 2. Define the missing variables
+  let currentYear = 2026;
+  let userAge = prompt("Please enter your age:"); // Asks the user for input
+  let answer = currentYear - userAge;
+  
+  // 3. Clear old text and display the new answer
+  output.innerHTML = "<p>Your birth year is: " + answer + "</p>";
+}
