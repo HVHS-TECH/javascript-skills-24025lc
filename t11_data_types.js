@@ -1,5 +1,5 @@
 /****************************
-Name of task: Task 10
+Name of task: Task 11
 Input from HTML 
 ****************************/
 console.log("Running T10-input_from_HTML_js")
