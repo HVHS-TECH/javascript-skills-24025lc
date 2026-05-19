@@ -1,6 +1,6 @@
 /****************************
 Name of task: Task 12
-Data Types
+Conditionals
 ****************************/
 console.log("Running T11_data_types.js")
 console.log("Hi my name is Liam Chung")
