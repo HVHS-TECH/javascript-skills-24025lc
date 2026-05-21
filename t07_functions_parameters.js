@@ -11,18 +11,18 @@ console.log("Hi my name is Liam Chung")
 /****************************
 Functions
 ****************************/
-function displayProduct(_name, _price){
-  // Change OUTPUT to match your HTML ID exactly
+function displayProduct(_name, _price) {
+  // Finds the HTML element where the text will be displayed
   let output = document.getElementById("spaceForJavaScriptOutput");
-  output.innerHTML += "<p>Chocolate Bar "+_price+"</p>";
-  output.innerHTML += "<p>Chips "+_price+"</p>";
-  output.innerHTML += "<p>Drink "+_price+"</p>";
-
+  
+  // Combines the parameters into the exact format requested
+  output.innerHTML += "<p>" + _name + ": $" + _price + "</p>";
 }
-
-
 
 /****************************
 Main Code
 ****************************/
-displayWelcome("Chocolate bar",4)
+// Calls the function three times with different arguments
+displayProduct("Chocolate bar", "4");
+displayProduct("Chips", "3");
+displayProduct("Drink", "2.50");
