@@ -21,10 +21,20 @@ function getFormInput(){
 /*Task 10 ****************************/
 
 function getFormInput(){
+  // 1. Get the HTML elements
   const NAME_FIELD = document.getElementById("nameField");
+  let output = document.getElementById("spaceForJavaScriptOutput");
+  
+  // 2. Extract the text value entered by the user
   let userName = NAME_FIELD.value;
-  OUTPUT.innerHTML = "<p>Your name is "+userName+"</p>";
+  
+  // 3. Clear old text and display the dynamic greeting
+  output.innerHTML = "<p>Your name is " + userName + "</p>";
+  
+  // 4. Clear the input box so it is empty for the next entry
+  NAME_FIELD.value = "";
 }
+
 
 
 
