@@ -5,32 +5,15 @@ Active Via Button
 console.log("Running T9-active_via_button.js")
 console.log("Hi my name is Liam Chung")
 
-
-
-
 /****************************
 Functions
 ****************************/
-function displaywelcome(_name, _price){
-  // Change OUTPUT to match  HTML ID exactly
+function welcome(){
+  // Change OUTPUT to match your HTML ID exactly
   let output = document.getElementById("spaceForJavaScriptOutput");
-  output.innerHTML += "<p>Chocolate Bar "+_price+"</p>";
-  output.innerHTML += "<p>Chips "+_price+"</p>";
-  output.innerHTML += "<p>Drink "+_price+"</p>";
-
+  output.innerHTML += "<p>Welcome to the Shop</p>";
 }
 
-function start() {
-  spaceForJavaScriptOutput.innerHTML
-  spaceForJavaScriptOutput.innerHTML
-  answer = currentYear - userAge;
-  spaceForJavaScriptOutput
-}
-
-/****************************
-Main Code
-****************************/
-displayWelcome("Chocolate bar",4)
 
 
 
