@@ -50,8 +50,25 @@ function handleUserData() {
   let userAge = AGE_FIELD.value;
   let pocketMoney = MONEY_FIELD.value;
   
-  // 3. Format the money value neatly to two decimal places
-  let formattedMoney = Number(pocketMoney).toFixed(2);
+  // 3. Convert string data types into proper numeric types
+  let ageNumber = parseInt(userAge);
+  let moneyNumber = parseFloat(pocketMoney);
+  
+  // 4. Validate numbers and display the data on the page
+  if (isNaN(ageNumber) || isNaN(moneyNumber)) {
+    OUTPUT.innerHTML = "<p style='color: red;'>Error: Please enter valid numbers for both fields.</p>";
+  } else {
+    // Format the money value neatly to two decimal places
+    let formattedMoney = moneyNumber.toFixed(2);
+    
+    // Output the results to the page
+    OUTPUT.innerHTML = "<p>Age: " + ageNumber + " years old</p>" +
+                       "<p>Pocket Money: $" + formattedMoney + "</p>";
+                       
+    // 5. Clear both input boxes for the next entry
+    AGE_FIELD.value = "";
+    MONEY_FIELD.value = "";
+  }
 }
 
 
