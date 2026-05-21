@@ -19,15 +19,25 @@ function welcome(){
 
 /*Task 9 ****************************/
 
+/*Task 9 ****************************/
+
 function start() {
   // 1. Get the HTML element
   let output = document.getElementById("spaceForJavaScriptOutput");
   
-  // 2. Define the missing variables
+  // 2. Define variables and get input
   let currentYear = 2026;
-  let userAge = prompt("Please enter your age:"); // Asks the user for input
-  let answer = currentYear - userAge;
+  let userAge = prompt("Please enter your age:"); 
   
-  // 3. Clear old text and display the new answer
-  output.innerHTML = "<p>Your birth year is: " + answer + "</p>";
+  // Convert text input to a number
+  let ageNumber = parseInt(userAge);
+  
+  // 3. Validate and calculate
+  if (isNaN(ageNumber)) {
+    output.innerHTML = "<p style='color: red;'>Error: Please enter a valid number.</p>";
+  } else {
+    let answer = currentYear - ageNumber;
+    // Single '=' overwrites the text clean on every button click
+    output.innerHTML = "<p>Your birth year is: " + answer + "</p>";
+  }
 }
