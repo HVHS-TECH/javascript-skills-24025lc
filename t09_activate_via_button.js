@@ -19,7 +19,7 @@ function welcome(){
 
 /*Task 9 ****************************/
 
-/*Task 9 ****************************/
+
 
 function start() {
   // 1. Get the HTML element
