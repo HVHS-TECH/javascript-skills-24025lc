@@ -19,27 +19,27 @@
   <h1>T13-functions with return values</h1>
   <p>Open the console <code>(Ctrl-shift-i)</code> to see the messages.</p>
 
-  <!-- Input fields required by your checkAffordability function -->
-  <div class="input-container">
+    <!-- User Inputs and Trigger Button -->
+  <div>
     <p>
-      <label for="ageField">Enter your age: </label>
+      <label for="ageField">Age:</label>
       <input type="number" id="ageField">
     </p>
     <p>
-      <label for="moneyField">Enter your pocket money ($): </label>
+      <label for="moneyField">Pocket Money ($):</label>
       <input type="number" id="moneyField" step="0.01">
     </p>
-    <button onclick="checkAffordability()">Check Affordability</button>
+    <button onclick="checkAffordability()">Submit</button>
   </div>
 
-  <br><br>
+  <br>
 
+  <!-- This is where your JavaScript will inject the affordability and change messages -->
   <div id="spaceForJavaScriptOutput">
 
     The output of your script will go here.
 
   </div>
-
   <script src="../t13_functions_return.js"></script>
 
 </body>
@@ -47,3 +47,4 @@
 </html>
 <!--*************************************************************
   END OF T13_FUNCTIONS_RETURN.HTML
+**************************************************************-->
