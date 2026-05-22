@@ -53,5 +53,33 @@ function checkAffordability() {
 
 /*Task 14 ****************************/
 
+function displayChocolatePreference() {
+  // 1. Get references to the HTML elements
+  const RATING_FIELD = document.getElementById("ratingField");
+  const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
+  
+  // 2. Extract and convert the value to a number index
+  let ratingIndex = Number(RATING_FIELD.value);
+  
+  // 3. Create the array containing the four required messages
+  let messages = [
+    "You loath chocolate",
+    "Chocolate is meh",
+    "Chocolate is pretty good",
+    "Chocolate is the best thing EVER!!!!"
+  ];
+  
+  // 4. Conditional safety logic to check if the index is valid (0, 1, 2, or 3)
+  if (ratingIndex >= 0 && ratingIndex <= 3) {
+    // Look up the exact array message matching the user's choice
+    let chosenMessage = messages[ratingIndex];
+    OUTPUT.innerHTML = "<p>" + chosenMessage + "</p>";
+  } else {
+    OUTPUT.innerHTML = "<p>Please enter a valid number between 0 and 3.</p>";
+  }
+  
+  // 5. Clear input field for clean next use
+  RATING_FIELD.value = "";
+}
 
 
