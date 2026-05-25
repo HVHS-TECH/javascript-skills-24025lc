@@ -40,3 +40,5 @@ function displayChocolatePreference() {
   // 5. Clear input field for clean next use
   RATING_FIELD.value = "";
 }
+
+

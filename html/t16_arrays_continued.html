@@ -19,12 +19,21 @@
   <h1>T16-arrays continued</h1>
   <p>Open the console <code>(Ctrl-shift-i)</code> to see the messages.</p>
 
-  <p><br><br><i>Copy your HTML from the last task and keep building.</i><br><br><br><br></p>
+  <!-- Changed from a <div> to a <form> with onsubmit prevention -->
+  <form class="form-container" onsubmit="event.preventDefault(); addItemToList();">
+    <label for="itemField">Enter an item to add to your list:</label><br>
+    <input type="text" id="itemField" placeholder="e.g., Milk, Bread, Apples">
+    <br><br>
+
+    <!-- Changed first input type to "submit" so the Enter key triggers it -->
+    <input type="submit" value="Add Item">
+    <input type="button" value="Display Shopping List" onclick="displayShoppingList()">
+  </form>
+  <br>
 
   <div id="spaceForJavaScriptOutput">
 
-    The output of your script will go here.
-
+   
   </div>
 
 
