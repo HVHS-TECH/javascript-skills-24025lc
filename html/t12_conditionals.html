@@ -19,8 +19,8 @@
   <h1>T12-conditionals</h1>
   <p>Open the console <code>(Ctrl-shift-i)</code> to see the messages.</p>
 
-  <!-- Input form copied from the previous task -->
-  <div id="formContainer">
+    <!-- Changed div to form and added onsubmit event to handle the Enter key -->
+  <form id="formContainer" onsubmit="handleUserData(event)">
     <p>
       <label for="ageField">Enter your age: </label>
       <input type="number" id="ageField" placeholder="e.g. 16">

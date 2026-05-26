@@ -11,16 +11,12 @@
   <link rel="icon" type="image/png" href="../assets/dtec_favicon.png">
 </head>
 
-<!--*************************************************************
-  BODY
-**************************************************************-->
-
 <body>
   <h1>T11-data types</h1>
   <p>Open the console <code>(Ctrl-shift-i)</code> to see the messages.</p>
 
-  <!-- Input form for age and pocket money data -->
-  <div id="formContainer">
+  <!-- Changed div to form and added onsubmit event to handle the Enter key -->
+  <form id="formContainer" onsubmit="handleUserData(event)">
     <p>
       <label for="ageField">Enter your age: </label>
       <input type="number" id="ageField" placeholder="e.g. 16">
@@ -31,16 +27,14 @@
       <input type="number" step="0.01" id="moneyField" placeholder="e.g. 12.50">
     </p>
     
-    <button onclick="handleUserData()">Submit Data</button>
-  </div>
+    <button type="submit">Submit Data</button>
+  </form>
 
   <div id="spaceForJavaScriptOutput"></div>
 
-  <script src="../t11_data_types.js"></script>
+  <!-- Added defer to guarantee elements load before script execution -->
+  <script src="../t11_data_types.js" defer></script>
 
 </body>
 
 </html>
-<!--*************************************************************
-  END OF T11_DATA_TYPES.HTML
-**************************************************************-->
