@@ -19,7 +19,28 @@
   <h1>T18-validation</h1>
   <p>Open the console <code>(Ctrl-shift-i)</code> to see the messages.</p>
 
-  <p><br><br><i>Copy your HTML from the last task and keep building.</i><br><br><br><br></p>
+  <!-- Task 14 Form Interface -->
+  <h2>Task 14: Chocolate Preference</h2>
+  <form id="chocolateForm" onsubmit="return false;">
+    <label for="ratingField">Rate Chocolate (0-10):</label>
+    <!-- Restricts inputs to numbers, sets range, and makes field mandatory -->
+    <input type="number" id="ratingField" min="0" max="10" required>
+    <button type="button" onclick="displayChocolatePreference()">Submit Rating</button>
+  </form>
+
+  <br>
+
+  <!-- Task 18 Form Interface -->
+  <h2>Task 18: Shopping List</h2>
+  <form id="shoppingForm" onsubmit="return false;">
+    <label for="itemField">Shopping Item Name:</label>
+    <!-- Mandatory text field with a pattern that prevents entering spaces alone -->
+    <input type="text" id="itemField" required pattern=".*\S+.*">
+    <button type="button" onclick="addItemToList()">Add Item</button>
+    <button type="button" onclick="displayShoppingList()">View List</button>
+  </form>
+
+  <br><br>
 
   <div id="spaceForJavaScriptOutput">
 
