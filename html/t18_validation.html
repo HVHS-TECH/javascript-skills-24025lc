@@ -19,23 +19,29 @@
   <h1>T18-validation</h1>
   <p>Open the console <code>(Ctrl-shift-i)</code> to see the messages.</p>
 
-  <!-- Changed from a <div> to a <form> with onsubmit prevention -->
-  <form class="form-container" onsubmit="event.preventDefault(); addItemToList();">
+  <!-- Form remains bound to addItemToList() which naturally handles the Enter key -->
+  <form class="form-container" onsubmit="event.preventDefault(); addItemToList();" novalidate>
     <label for="itemField">Enter an item to add to your list:</label><br>
-    <input type="text" id="itemField" placeholder="e.g., Milk, Bread, Apples">
+    
+    <!-- HTML Restrictions: required, minimum length of 1, and pattern requiring non-numbers -->
+    <input 
+      type="text" 
+      id="itemField" 
+      placeholder="e.g., Milk, Bread, Apples"
+      required
+      minlength="1"
+      pattern=".*[a-zA-Z\s\W]+.*"
+      title="Item name must contain text characters, not just numbers."
+    >
     <br><br>
 
-    <!-- Changed first input type to "submit" so the Enter key triggers it -->
+    <!-- The submit type processes the form when clicking OR pressing Enter -->
     <input type="submit" value="Add Item">
     <input type="button" value="Display Shopping List" onclick="displayShoppingList()">
   </form>
   <br>
 
-  <div id="spaceForJavaScriptOutput">
-
-   
-  </div>
-
+  <div id="spaceForJavaScriptOutput"></div>
 
   <script src="../t16_arrays_continued.js"></script>
 
@@ -43,5 +49,5 @@
 
 </html>
 <!--*************************************************************
-  END OF T16_ARRAYS_CONTINUED.HTML
+  END OF T18_Validation.HTML
 **************************************************************-->
