@@ -19,34 +19,29 @@
   <h1>T18-validation</h1>
   <p>Open the console <code>(Ctrl-shift-i)</code> to see the messages.</p>
 
-  
+  <!-- Changed from a <div> to a <form> with onsubmit prevention -->
+  <form class="form-container" onsubmit="event.preventDefault(); addItemToList();">
+    <label for="itemField">Enter an item to add to your list:</label><br>
+    <input type="text" id="itemField" placeholder="e.g., Milk, Bread, Apples">
+    <br><br>
 
-  <br>
-
-  <!-- Task 18 Form Interface -->
-  <h2>Task 18: Shopping List</h2>
-  <form id="shoppingForm" onsubmit="return false;">
-    <label for="itemField">Shopping Item Name:</label>
-    <!-- Mandatory text field with a pattern that prevents entering spaces alone -->
-    <input type="text" id="itemField" required pattern=".*\S+.*">
-    <button type="button" onclick="addItemToList()">Add Item</button>
-    <button type="button" onclick="displayShoppingList()">View List</button>
+    <!-- Changed first input type to "submit" so the Enter key triggers it -->
+    <input type="submit" value="Add Item">
+    <input type="button" value="Display Shopping List" onclick="displayShoppingList()">
   </form>
-
-  <br><br>
+  <br>
 
   <div id="spaceForJavaScriptOutput">
 
-    The output of your script will go here.
-
+   
   </div>
 
 
-  <script src="../t18_validation.js"></script>
+  <script src="../t16_arrays_continued.js"></script>
 
 </body>
 
 </html>
 <!--*************************************************************
-  END OF T18_VALIDATION.HTML
+  END OF T16_ARRAYS_CONTINUED.HTML
 **************************************************************-->
