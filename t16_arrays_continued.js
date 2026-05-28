@@ -1,70 +1,75 @@
-
-
-/****************************
- * Name of task: Task 16
- * Arrays Part 2
- ****************************/
-
 /*******************************************************************************
- * Name of task: Task 16
- * Arrays Part 2 - Shopping List Form
+ * Name of task: Task 18
+ * Validation 
  ******************************************************************************/
 
-console.log("Running T16_arrays_2.js");
+console.log("Running T18_validation.js");
 
 // Global array to store the shopping list items
 let shoppingList = [];
 
+// Wait for the DOM to load, then attach the form submit listener
+document.addEventListener("DOMContentLoaded", () => {
+  const FORM = document.getElementById("shoppingForm");
+  if (FORM) {
+    FORM.addEventListener("submit", handleFormSubmit);
+  }
+});
+
 /**
- * Action 1: Adds a typed item to the global array and shows a confirmation.
+ * Handles the form submission event, validates, and processes the item.
+ */
+function handleFormSubmit(event) {
+  // Always prevent the default browser page reload first
+  event.preventDefault(); 
+  
+  addItemToList();
+}
+
+/**
+ * Validates the input field and adds the typed item to the global array.
  */
 function addItemToList() {
-  // 1. Get references to the HTML elements
   const ITEM_FIELD = document.getElementById("itemField");
   const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
 
-  // 2. Extract the value and remove extra spacing
+  // 1. Extract the value and remove extra spacing
   let newItem = ITEM_FIELD.value.trim();
 
-  // 3. Validation: Ensure the user didn't submit an empty box
-  if (newItem === "") {
-    OUTPUT.innerHTML = "<p style='color: red;'>Please type an item before clicking add.</p>";
+  // 2. HTML5 Validation Check: Stop processing if HTML restrictions fail
+  if (!ITEM_FIELD.checkValidity()) {
+    if (newItem === "") {
+      OUTPUT.innerHTML = "<p style='color: red;'>Please type an item before clicking add.</p>";
+    } else {
+      OUTPUT.innerHTML = "<p style='color: red;'>Please use letters and spaces only.</p>";
+    }
     return;
   }
 
-  // 4. Add the item to the end of our shopping array
+  // 3. JavaScript Validation: Explicitly ensure the field is not a number
+  if (!isNaN(newItem) || /[0-9]/.test(newItem)) {
+    OUTPUT.innerHTML = "<p style='color: red;'>Numbers are not allowed. Please enter a valid item name.</p>";
+    return;
+  }
+
+  // 4. JavaScript Validation: Check for duplicates (case-insensitive)
+  if (shoppingList.some(item => item.toLowerCase() === newItem.toLowerCase())) {
+    OUTPUT.innerHTML = "<p style='color: red;'>That item is already on your shopping list!</p>";
+    return;
+  }
+
+  // 5. Success path: Add the item to the end of our shopping array
   shoppingList.push(newItem);
 
-  // 5. Display the specific confirmation message required
-  OUTPUT.innerHTML = "<p>You have added <strong>" + newItem + "</strong> to the list.</p>";
+  // 6. Securely display the confirmation message (XSS Safe)
+  OUTPUT.innerHTML = "<p>You have added <strong id='secureTarget'></strong> to the list.</p>";
+  document.getElementById("secureTarget").textContent = newItem;
 
-  // 6. Clear input box for next use
-  ITEM_FIELD.value = "";
-}
+  // 7. Clear input box for next use
+  ITEM_FIELD.value = ""; }
 
-/**
- * Action 2: Loops through the array and outputs every single item on a new line.
- */
-function displayShoppingList() {
-  const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
 
-  // 1. Check if the list has any items in it first
-  if (shoppingList.length === 0) {
-    OUTPUT.innerHTML = "<p>Your shopping list is currently empty!</p>";
-    return;
-  }
 
-  // 2. Create the required heading string
-  let listHtml = "<h3>These are the items on your shopping list:</h3>";
-
-  // 3. Loop through the array and append each item on a separate line using <br>
-  for (let i = 0; i < shoppingList.length; i++) {
-    listHtml += (i + 1) + ". " + shoppingList[i] + "<br>";
-  }
-
-  // 4. Output the finalized list blocks to the screen
-  OUTPUT.innerHTML = listHtml;
-}
 
 
 
