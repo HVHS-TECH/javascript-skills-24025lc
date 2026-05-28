@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Name of task: Task 18
  * Validation
@@ -29,8 +28,9 @@ function addItemToList() {
   // 4. Add the item to the end of our shopping array
   shoppingList.push(newItem);
 
-  // 5. Display the specific confirmation message required
-  OUTPUT.innerHTML = "<p>You have added <strong>" + newItem + "</strong> to the list.</p>";
+  // 5. Securely display the specific confirmation message (XSS Safe)
+  OUTPUT.innerHTML = "<p>You have added <strong id='secureTarget'></strong> to the list.</p>";
+  document.getElementById("secureTarget").textContent = newItem;
 
   // 6. Clear input box for next use
   ITEM_FIELD.value = "";
@@ -48,17 +48,14 @@ function displayShoppingList() {
     return;
   }
 
-  // 2. Create the required heading string
-  let listHtml = "<h3>These are the items on your shopping list:</h3>";
+  // 2. Clear previous content and add the required heading string
+  OUTPUT.innerHTML = "<h3>These are the items on your shopping list:</h3><div id='listContainer'></div>";
+  const CONTAINER = document.getElementById("listContainer");
 
-  // 3. Loop through the array and append each item on a separate line using <br>
+  // 3. Loop through the array and append each item securely using textContent
   for (let i = 0; i < shoppingList.length; i++) {
-    listHtml += (i + 1) + ". " + shoppingList[i] + "<br>";
+    const itemRow = document.createElement("div");
+    itemRow.textContent = (i + 1) + ". " + shoppingList[i];
+    CONTAINER.appendChild(itemRow);
   }
-
-  // 4. Output the finalized list blocks to the screen
-  OUTPUT.innerHTML = listHtml;
 }
-
-
-
