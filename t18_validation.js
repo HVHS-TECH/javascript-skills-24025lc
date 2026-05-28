@@ -25,13 +25,7 @@ function addItemToList() {
     return;
   }
 
-  // 4. New Validation: Block text that looks like a name (letters and spaces only)
-  // This allows "2 apples" or "milk" but blocks "John" or "Mary Jane"
-  const NAME_REGEX = /^[A-Za-z\s]+$/;
-  if (NAME_REGEX.test(newItem)) {
-    OUTPUT.innerHTML = "<p style='color: red;'>Names or plain text names are not allowed on this shopping list.</p>";
-    return;
-  }
+
 
   // 5. Add the item to the end of our shopping array
   shoppingList.push(newItem);
@@ -68,10 +62,3 @@ function displayShoppingList() {
   }
 }
 
-
-
-// Convert input to lowercase to catch "John" or "john"
-if (BANNED_NAMES.includes(newItem.toLowerCase())) {
-  OUTPUT.innerHTML = "<p style='color: red;'>Names or plain text names are not allowed on this shopping list.</p>";
-  return;
-}
