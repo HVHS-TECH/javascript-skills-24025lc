@@ -11,6 +11,9 @@ let shoppingList = [];
 /**
  * Action 1: Adds a typed item to the global array and shows a confirmation.
  */
+/**
+ * Action 1: Adds a typed item to the global array and shows a confirmation.
+ */
 function addItemToList() {
   // 1. Get references to the HTML elements
   const ITEM_FIELD = document.getElementById("itemField");
@@ -25,7 +28,17 @@ function addItemToList() {
     return;
   }
 
+  // 3.5 Validation: Reject numbers and ensure only letters/spaces are allowed
+  if (/[0-9]/.test(newItem)) {
+    OUTPUT.innerHTML = "<p style='color: red;'>Numbers are not allowed. Please enter text only.</p>";
+    return;
+  }
 
+  // 4. Validation: Check for duplicates (case-insensitive)
+  if (shoppingList.some(item => item.toLowerCase() === newItem.toLowerCase())) {
+    OUTPUT.innerHTML = "<p style='color: red;'>That item is already on your shopping list!</p>";
+    return;
+  }
 
   // 5. Add the item to the end of our shopping array
   shoppingList.push(newItem);
@@ -37,28 +50,3 @@ function addItemToList() {
   // 7. Clear input box for next use
   ITEM_FIELD.value = "";
 }
-
-/**
- * Action 2: Loops through the array and outputs every single item on a new line.
- */
-function displayShoppingList() {
-  const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
-
-  // 1. Check if the list has any items in it first
-  if (shoppingList.length === 0) {
-    OUTPUT.innerHTML = "<p>Your shopping list is currently empty!</p>";
-    return;
-  }
-
-  // 2. Clear previous content and add the required heading string
-  OUTPUT.innerHTML = "<h3>These are the items on your shopping list:</h3><div id='listContainer'></div>";
-  const CONTAINER = document.getElementById("listContainer");
-
-  // 3. Loop through the array and append each item securely using textContent
-  for (let i = 0; i < shoppingList.length; i++) {
-    const itemRow = document.createElement("div");
-    itemRow.textContent = (i + 1) + ". " + shoppingList[i];
-    CONTAINER.appendChild(itemRow);
-  }
-}
-
