@@ -67,3 +67,11 @@ function displayShoppingList() {
     CONTAINER.appendChild(itemRow);
   }
 }
+
+
+
+// Convert input to lowercase to catch "John" or "john"
+if (BANNED_NAMES.includes(newItem.toLowerCase())) {
+  OUTPUT.innerHTML = "<p style='color: red;'>Names or plain text names are not allowed on this shopping list.</p>";
+  return;
+}
