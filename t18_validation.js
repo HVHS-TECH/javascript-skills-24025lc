@@ -50,3 +50,5 @@ function addItemToList() {
   // 7. Clear input box for next use
   ITEM_FIELD.value = "";
 }
+
+
