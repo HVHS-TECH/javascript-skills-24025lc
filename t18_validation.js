@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Name of task: Task 18
- * Validation
+ * Validation (Names Blocked)
  ******************************************************************************/
 
 console.log("Running T18_validation.js");
@@ -25,14 +25,22 @@ function addItemToList() {
     return;
   }
 
-  // 4. Add the item to the end of our shopping array
+  // 4. New Validation: Block text that looks like a name (letters and spaces only)
+  // This allows "2 apples" or "milk" but blocks "John" or "Mary Jane"
+  const NAME_REGEX = /^[A-Za-z\s]+$/;
+  if (NAME_REGEX.test(newItem)) {
+    OUTPUT.innerHTML = "<p style='color: red;'>Names or plain text names are not allowed on this shopping list.</p>";
+    return;
+  }
+
+  // 5. Add the item to the end of our shopping array
   shoppingList.push(newItem);
 
-  // 5. Securely display the specific confirmation message (XSS Safe)
+  // 6. Securely display the specific confirmation message (XSS Safe)
   OUTPUT.innerHTML = "<p>You have added <strong id='secureTarget'></strong> to the list.</p>";
   document.getElementById("secureTarget").textContent = newItem;
 
-  // 6. Clear input box for next use
+  // 7. Clear input box for next use
   ITEM_FIELD.value = "";
 }
 
