@@ -8,11 +8,17 @@ console.log("Running T18_validation.js");
 // Global array to store the shopping list items
 let shoppingList = [];
 
-// Wait for the DOM to load, then attach the form submit listener
+// Wait for the DOM to load, then attach listeners
 document.addEventListener("DOMContentLoaded", () => {
   const FORM = document.getElementById("shoppingForm");
   if (FORM) {
     FORM.addEventListener("submit", handleFormSubmit);
+  }
+
+  // Attach listener for the display button matching your HTML id
+  const DISPLAY_BTN = document.getElementById("displayListBtn");
+  if (DISPLAY_BTN) {
+    DISPLAY_BTN.addEventListener("click", displayShoppingList);
   }
 });
 
@@ -69,3 +75,26 @@ function addItemToList() {
   ITEM_FIELD.value = "";
 }
 
+/**
+ * Displays the current items in the shopping list array on the page.
+ */
+function displayShoppingList() {
+  const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
+
+  // 1. Check if the list is empty
+  if (shoppingList.length === 0) {
+    OUTPUT.innerHTML = "<p>Your shopping list is empty.</p>";
+    return;
+  }
+
+  // 2. Build the list container
+  OUTPUT.innerHTML = "<h3>Your Current Shopping List:</h3><ul id='listTarget'></ul>";
+  const LIST_TARGET = document.getElementById("listTarget");
+
+  // 3. Loop through array and safely append items text-only to prevent bugs
+  for (let i = 0; i < shoppingList.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = shoppingList[i];
+    LIST_TARGET.appendChild(li);
+  }
+}
