@@ -64,7 +64,7 @@ function addItemToList() {
     return;
   }
 
-  // 5. Success path: Add the item to the end of our shopping array
+  // 5. Success path: Add the item to the end of the shopping array
   shoppingList.push(newItem);
 
   // 6. Securely display the confirmation message (XSS Safe)
