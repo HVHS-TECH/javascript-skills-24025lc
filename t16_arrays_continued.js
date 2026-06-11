@@ -66,10 +66,6 @@ function addItemToList() {
   document.getElementById("secureTarget").textContent = newItem;
 
   // 7. Clear input box for next use
-  ITEM_FIELD.value = ""; }
-
-
-
-
-
+  ITEM_FIELD.value = "";
+}
 
