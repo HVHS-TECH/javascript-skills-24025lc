@@ -15,7 +15,7 @@ function displayProduct(_name, _price) {
   // Finds the HTML element where the text will be displayed
   let output = document.getElementById("spaceForJavaScriptOutput");
   
-  // Combines the parameters into the exact format requested
+  
   output.innerHTML += "<p>" + _name + ": $" + _price + "</p>";
 }
 
