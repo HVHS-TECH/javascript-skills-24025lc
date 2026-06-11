@@ -78,8 +78,13 @@ window.onload = function() {}
         }
 
         // 5. Final standard closing verse
+        let finalBottles = "bottles";
+        if (startNum == 1) {
+            finalBottles = "bottle";
+        }
+
         songHtml += `<p>No more bottles of milk on the wall, no more bottles of milk.</p>`;
-        songHtml += `<p>Go to the store and buy some more, ${startNum} bottles of milk on the wall.</p>`;
+        songHtml += `<p>Go to the store and buy some more, ${startNum} ${finalBottles} of milk on the wall.</p>`;
 
         // 6. Push everything into the web page safely
         outputDiv.innerHTML = songHtml;
