@@ -8,6 +8,7 @@ console.log("Running T18_validation.js");
 // Global array to store the shopping list items
 let shoppingList = [];
 
+// Wait for the DOM to load, then attach the form submit listener
 document.addEventListener("DOMContentLoaded", () => {
   const FORM = document.getElementById("shoppingForm");
   if (FORM) {
